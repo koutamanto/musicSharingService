@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}
+音楽
+{% endblock %}
+{% block content%}
+<div class="m-5">
+  {{embed_html | safe}}
+  <a href="{{url}}">
+    <h4>{{title}}</h4>
+  </a>
+  <b>{{artist}}</b>
+  <p>{{description}}</p>
+  <p>{{uploaded_at}}</p>
+  {% endblock%}
+</div>

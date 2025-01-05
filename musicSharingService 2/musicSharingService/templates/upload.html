@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}
+アップロード
+{% endblock %}
+{% block content%}
+<form action="/upload" method="post" class="p-5">
+  <div class="form-group p-5">
+    <label for="url"><h6>音楽のURL(YouTube/Soundcloudなど)</h6></label>
+    <input type="text" name="url" id="url" class="form-control" aria-describedby="helpUrl" placeholder="https://youtu.be/6tjlU4w4fSo?si=5K0gaJoab5g5W1eL">
+    <small id="helpUrl" class="text-muted">共有する音楽のURLを入力してください。</small>
+    <br>
+    <label for="title"><h6>タイトル</h6></label>
+    <input type="text" name="title" id="title" class="form-control" aria-describedby="helpTitle" placeholder="Love Yourz">
+    <small id="helpTitle" class="text-muted">タイトルを入力してください。</small>
+    <br>
+    <label for="artist"><h6>アーティスト名</h6></label>
+    <input type="text" name="artist" id="artist" class="form-control" aria-describedby="helpArtist" placeholder="J.Cole">
+    <small id="helpArtist" class="text-muted">アーティスト名を入力してください。</small>
+    <br>
+    <label for="description"><h6>説明</h6></label>
+    <input type="text" name="description" id="description" class="form-control" aria-describedby="helpDescription" placeholder="リリックが深い。最高です。">
+    <small id="helpDescription" class="text-muted">説明文を入力してください。</small>
+    <br>
+    <button type="submit" class="btn btn-primary mt-3">アップロード</button>
+  </div>
+</form>
+{% endblock%}
