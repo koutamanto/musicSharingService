@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <title>{% block title %}{% endblock %} | Music Sharing Service</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="/static/index.css">
+
+    <style>
+        body{
+        background-color:rgb(132, 173, 255);
+        }
+    </style>
+</head>
+
+<body>
+    {% include "components/header.html"%}
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                {% block content %}
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+<!--
+<div id="wrapper">
+    <header>
+    <div class="container">
+        <div class="hamburger" id="open_nav">
+            <img src="/static/hamburger.png" alt="Menu">
+        </div>
+
+
+    </div>
+</div>
+
+<nav id = "nav">
+    <div class="logo">
+        <img src="/static/logo.svg" alt="Logo">
+    </div>
+    <ul>
+        <li><a href="/">home</a></li>
+        <li><a href="/">音楽</a></li>
+        <li><a href="static/kizi.html">特集</a></li>
+        <li><a href="/upload">投稿</a></li>
+        <li><a href="/">タグ一覧</a></li>
+        <li><a href="static/kiyaku.html">利用規約</a></li>
+    </ul>
+</nav>
+
+</header>
+-->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <script src="/static/script.js"></script>
+    <script src="/static/jquery-3.7.1.min.js"></script>
+    <script>
+    'use strict';
+
+    $(document).ready(function() {
+    $('#open_nav').on('click', function() {
+        $('#wrapper, #nav').toggleClass('show');
+    });
+});
+    </script>
+</body>
+</html>

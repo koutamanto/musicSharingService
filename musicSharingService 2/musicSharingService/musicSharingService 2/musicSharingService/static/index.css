@@ -1,0 +1,148 @@
+@charset "UTF-8";
+.carousel-inner {
+    width: 1280px;
+}
+.carousel-container {
+    display: flex;
+    justify-content: center; /* 水平方向の中央揃え */
+    align-items: center;    /* 垂直方向の中央揃え */
+}
+.container{
+    max-width: 100%;
+}
+img{
+    max-width: 100%;
+}
+.show{
+    transform: translate3d(270px, 0, 0);
+}
+#wrapper, #nav{
+    z-index:1000;
+    transition: transform 0.3s;
+}
+/*ヘッダー部分*/
+.header{
+    padding: 16px 0;
+}
+header .container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+}
+.hamburger{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.hamburger img{
+    width: 30px;
+    height: auto;
+    margin-right: 16px; /* ロゴとの間隔を調整 */
+}
+header .logo{
+    display: flex;
+    align-items: center;
+}
+header .logo img{
+    max-height: 40px;
+    width: auto;
+}
+.title-block{
+    flex: 1 1 auto;
+    text-align: center;
+    margin-left: 16px;
+}
+/* メニュー */
+#nav {
+    padding: 24px 0px 500px 0px;
+    background: #000;
+    color: white;
+    position: fixed;
+    left: -540px;
+    top: 100px;
+    width: 270px;
+    height: 100%;
+    border-radius: 1rem;
+}
+#nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+#nav ul li {
+    padding: 10px;
+}
+#nav li a {
+    display: block;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #114d60;
+    text-decoration: none;
+    color: #fff;
+}
+#nav li a:hover {
+    background: #0e3e4d;
+    border-radius: 4px;
+}
+#nav .logo {
+    margin-bottom: 20px;
+}
+#nav .logo img {
+    max-height: 40px;
+    width: auto;
+}
+main .container{
+    padding: 16px;    /*要素の周りの余白*/
+}
+.content {
+    text-align: center;
+    padding:20vw;
+}
+
+.content h1 {
+    font-size: 60px;
+    color: white;
+}
+section h3 {
+    font-size: 30px;
+    padding: 5vh;
+    color: white;
+    text-align: center;
+}
+
+/* ナビゲーション全体を横並びに配置 */
+.navbar {
+    display: flex;
+    align-items: center; /* 縦方向で中央揃え */
+    justify-content: space-between; /* 子要素を左右に分ける */
+    flex-wrap: wrap; /* 必要に応じて折り返し可能 */
+}
+/* ハンバーガーとロゴ部分の配置 */
+#wrapper {
+    display: flex;
+    align-items: center; /* ハンバーガーアイコンとロゴを中央揃え */
+}
+
+/* 検索バー部分 */
+.search-bar {
+    display: flex;
+    width: 500px;
+    max-width: 100%;
+    align-items: center;
+    margin-left: auto; /* 検索バーを右寄せ */
+}
+.search-bar input {
+    border-radius: 4px 0 0 4px; /* 左端を丸く */
+}
+.search-bar button {
+    border-radius: 0 4px 4px 0; /* 右端を丸く */
+}
+@media (max-width: 768px) {
+    .search-bar input {
+        width: 100%; /* 小さい画面では幅を親要素に合わせる */
+    }
+}
+
+section.new-music {
+    padding: 5vh;
+}

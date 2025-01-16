@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% block title %}
+ホーム
+{% endblock %}
+{% block content%}
+
+<div class="container">
+  <section>
+    <div class="content">
+      <h1>MusicShareへようこそ</h1>
+      <h3 class="text-light">新しい音楽と出会える、音楽共有サービス</h3>
+      <h4 class="text-light">
+        Scroll
+      </h4>
+      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="white" class="bi bi-arrow-down" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1"/>
+      </svg>
+    </div>
+    <h3>
+      特集記事
+    </h3>
+    <div class="carousel-container" id="articles">
+      <div id="carouselExample" class="carousel slide">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <a href="../static/kizi.html" target="_blank"><img src="../static/mori.png" class="d-block" alt="..."></a>
+          </div>
+          <div class="carousel-item">
+            <img src="../static/emerarudo.jpg" class="d-block " alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="../static/sakura.jpg" class="d-block " alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+    <section class="new-music" id="new-music">
+      <h1 class="display m-3 text-light">
+        新着音楽
+      </h1>
+  
+      <div class="d-flex bg-light rounded flex-wrap m-3">
+        {% for music_id, title, artist, description, url, upload_at, thumbnail_url in musics %}
+        <div class="col p-3 m-3">
+          <a href="/music/{{music_id}}">
+            <img src="{{thumbnail_url}}" alt="" width="350px">
+            <h4 class="title">{{title}}</h4>
+          </a>
+          <b>{{artist}}</b>
+          <p>{{description}}</p>
+          <p>{{uploaded_at}}</p>
+        </div>
+        {% endfor %}
+      </div>
+      {% endblock%}
+    </section>
