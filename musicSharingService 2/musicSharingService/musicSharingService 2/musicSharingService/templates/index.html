@@ -49,7 +49,7 @@
       </h1>
   
       <div class="d-flex bg-light rounded flex-wrap m-3">
-        {% for music_id, title, artist, description, url, upload_at, thumbnail_url in musics %}
+        {% for music_id, title, artist, description, url, upload_at, tags, thumbnail_url in musics %}
         <div class="col p-3 m-3">
           <a href="/music/{{music_id}}">
             <img src="{{thumbnail_url}}" alt="" width="350px">
@@ -58,6 +58,11 @@
           <b>{{artist}}</b>
           <p>{{description}}</p>
           <p>{{uploaded_at}}</p>
+          <div class="d-flex">
+            {% for tag in tags.split(",") %}
+            <span class="badge text-bg-primary m-1" onclick="location.href='/search?q={{ tag }}#new-music';">{{ tag }}</span>
+            {% endfor %}
+          </div>
         </div>
         {% endfor %}
       </div>
