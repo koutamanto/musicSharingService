@@ -99,6 +99,42 @@ main .container{
     padding:20vw;
 }
 
+img.thumbnail {
+    width: 350px;
+}
+h4.title {
+    width: 350px;
+}
+p.description {
+    text-wrap-mode:wrap;
+}
+@media screen and (max-width: 768px)  {
+    .content {
+        text-align: center;
+        padding:10vw;
+        padding-top: 20vh;
+    }
+    .carousel-inner {
+        width: 80vw;
+    }
+    img.thumbnail {
+        width: 27.5vh;
+    }
+    section.new-music {
+        padding: 1vh;
+    }
+    h4.title {
+        width: 27.5vh;
+    }
+    p.description {
+        text-wrap-mode:wrap;
+        width: 27.5vh;
+    }
+    .content h3 {
+        font-size: 20px;
+    }
+}
+
 .content h1 {
     font-size: 60px;
     color: white;
@@ -145,4 +181,8 @@ section h3 {
 
 section.new-music {
     padding: 5vh;
+}
+
+#uploadForm h6, #uploadForm small {
+    color: white;
 }

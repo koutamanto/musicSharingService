@@ -4,25 +4,25 @@
 {% endblock %}
 {% block content%}
 <form action="/upload" method="post" class="p-5">
-  <div class="form-group p-5">
-    <label for="url"><h6>音楽のURL(YouTube/Soundcloudなど)</h6></label>
+  <div class="form-group p-5" id="uploadForm">
+    <label for="url"><h6 class="text-light">音楽のURL(YouTubeの動画URL)</h6></label>
     <input type="text" name="url" id="url" class="form-control" aria-describedby="helpUrl" placeholder="https://youtu.be/6tjlU4w4fSo?si=5K0gaJoab5g5W1eL" required>
-    <small id="helpUrl" class="text-muted">共有する音楽のURLを入力してください。</small>
+    <small id="helpUrl" class="text-light">共有する音楽のURLを入力してください。</small>
     <br>
-    <label for="title"><h6>タイトル</h6></label>
+    <label for="title"><h6 class="text-light">タイトル</h6></label>
     <input type="text" name="title" id="title" class="form-control" aria-describedby="helpTitle" placeholder="Love Yourz" required>
-    <small id="helpTitle" class="text-muted">タイトルを入力してください。</small>
+    <small id="helpTitle" class="text-light">タイトルを入力してください。</small>
     <br>
-    <label for="artist"><h6>アーティスト名</h6></label>
+    <label for="artist"><h6 class="text-light">アーティスト名</h6></label>
     <input type="text" name="artist" id="artist" class="form-control" aria-describedby="helpArtist" placeholder="J.Cole" required>
-    <small id="helpArtist" class="text-muted">アーティスト名を入力してください。</small>
+    <small id="helpArtist" class="text-light">アーティスト名を入力してください。</small>
     <br>
-    <label for="description"><h6>説明</h6></label>
+    <label for="description"><h6 class="text-light">説明</h6></label>
     <input type="text" name="description" id="description" class="form-control" aria-describedby="helpDescription" placeholder="リリックが深い。最高です。" required>
-    <small id="helpDescription" class="text-muted">説明文を入力してください。</small>
+    <small id="helpDescription" class="text-light">説明文を入力してください。</small>
     <br>
     <label for="tags">
-      <h6>タグ</h6>
+      <h6 class="text-light">タグ</h6>
     </label>
     <input name="tags" id="tags" type="hidden">
       <span class="badge text-bg-secondary" value="リラックス" onclick='if(!document.getElementById("tags").value.includes(this.innerHTML.replace("\n", ""))){document.getElementById("tags").value = document.getElementById("tags").value + this.innerHTML.replace("\n", "") + ",";this.classList.replace("text-bg-secondary", "text-bg-primary");}else {document.getElementById("tags").value = document.getElementById("tags").value - this.innerHTML.replace("\n", "");this.classList.replace("text-bg-primary", "text-bg-secondary");}'>リラックス</span>
@@ -33,7 +33,7 @@
       <span class="badge text-bg-secondary" value="K-POP" onclick='if(!document.getElementById("tags").value.includes(this.innerHTML.replace("\n", ""))){document.getElementById("tags").value = document.getElementById("tags").value + this.innerHTML.replace("\n", "") + ",";this.classList.replace("text-bg-secondary", "text-bg-primary");}else {document.getElementById("tags").value = document.getElementById("tags").value - this.innerHTML.replace("\n", "");this.classList.replace("text-bg-primary", "text-bg-secondary");}'>K-POP</span>
       <span class="badge text-bg-secondary" value="C-POP" onclick='if(!document.getElementById("tags").value.includes(this.innerHTML.replace("\n", ""))){document.getElementById("tags").value = document.getElementById("tags").value + this.innerHTML.replace("\n", "") + ",";this.classList.replace("text-bg-secondary", "text-bg-primary");}else {document.getElementById("tags").value = document.getElementById("tags").value - this.innerHTML.replace("\n", "");this.classList.replace("text-bg-primary", "text-bg-secondary");}'>C-POP</span>
     <br>
-    <button type="submit" class="btn btn-primary mt-3">アップロード</button>
+    <button type="submit" class="btn btn-primary bg-dark mt-3">アップロード</button>
   </div>
 </form>
 {% endblock%}

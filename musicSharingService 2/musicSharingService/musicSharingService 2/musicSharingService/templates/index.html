@@ -8,7 +8,8 @@
   <section>
     <div class="content">
       <h1>MusicShareへようこそ</h1>
-      <h3 class="text-light">新しい音楽と出会える、音楽共有サービス</h3>
+      <h3 class="text-light d-none d-md-block">新しい音楽と出会える、音楽共有サービス</h3>
+      <h3 class="text-light d-block d-lg-none">新しい音楽と出会える<br>音楽共有サービス</h3>
       <h4 class="text-light">
         Scroll
       </h4>
@@ -48,17 +49,17 @@
         新着音楽
       </h1>
   
-      <div class="d-flex bg-light rounded flex-wrap m-3">
+      <div class="d-flex bg-light rounded flex-wrap">
         {% for music_id, title, artist, description, url, upload_at, tags, thumbnail_url in musics %}
         <div class="col p-3 m-3">
           <a href="/music/{{music_id}}">
-            <img src="{{thumbnail_url}}" alt="" width="350px">
+            <img src="{{thumbnail_url}}" alt="" class="thumbnail">
             <h4 class="title">{{title}}</h4>
           </a>
           <b>{{artist}}</b>
-          <p>{{description}}</p>
+          <p class="description">{{description}}</p>
           <p>{{uploaded_at}}</p>
-          <div class="d-flex">
+          <div class="d-flex flex-wrap">
             {% for tag in tags.split(",") %}
             <span class="badge text-bg-primary m-1" onclick="location.href='/search?q={{ tag }}#new-music';">{{ tag }}</span>
             {% endfor %}
