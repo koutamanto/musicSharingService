@@ -3,6 +3,7 @@ from uuid import uuid4
 from flask import Flask, render_template, request, redirect, url_for
 from datetime import datetime
 import sqlite3
+import traceback
 
 import requests
 conn = sqlite3.connect("db/music.db", check_same_thread=False)
@@ -15,10 +16,13 @@ def index_page():
     cur.execute('SELECT * FROM music')
     musics = []
     for music_id, title, artist, description, url, upload_at, tags in cur.fetchall():
-        oembed_url = f"https://www.youtube.com/oembed?url={url}&format=json"
-        oembed = requests.get(oembed_url).json()
-        thumbnail_url = oembed["thumbnail_url"]
-        musics.append([music_id, title, artist, description, url, upload_at, tags, thumbnail_url])
+        try:
+            oembed_url = f"https://www.youtube.com/oembed?url={url}&format=json"
+            oembed = requests.get(oembed_url).json()
+            thumbnail_url = oembed["thumbnail_url"]
+            musics.append([music_id, title, artist, description, url, upload_at, tags, thumbnail_url])
+        except Exception as e:
+            traceback.print_exc()
     return render_template("index.html", musics=musics)
 
 @app.route("/music/<string:music_id>")
@@ -26,10 +30,13 @@ def music_page(music_id: str):
     cur.execute('SELECT * FROM music')
     musics = []
     for _music_id, _title, _artist, _description, _url, _upload_at, _tags in cur.fetchall():
-        oembed_url = f"https://www.youtube.com/oembed?url={_url}&format=json"
-        oembed = requests.get(oembed_url).json()
-        _thumbnail_url = oembed["thumbnail_url"]
-        musics.append([_music_id, _title, _artist, _description, _url, _upload_at, _tags, _thumbnail_url])
+        try:
+            oembed_url = f"https://www.youtube.com/oembed?url={_url}&format=json"
+            oembed = requests.get(oembed_url).json()
+            _thumbnail_url = oembed["thumbnail_url"]
+            musics.append([_music_id, _title, _artist, _description, _url, _upload_at, _tags, _thumbnail_url])
+        except Exception as e:
+            traceback.print_exc()
     cur.execute('SELECT * FROM music WHERE music_id=?', [music_id])
     music_id, title, artist, description, url, upload_at, tags = cur.fetchone()
     oembed_url = f"https://www.youtube.com/oembed?url={url}&format=json"

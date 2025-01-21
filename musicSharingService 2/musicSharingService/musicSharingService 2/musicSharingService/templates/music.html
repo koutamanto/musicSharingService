@@ -24,7 +24,7 @@
     <h2 class="text-center text-light">
       関連音楽
     </h2>
-    <div class="d-flex bg-light rounded flex-wrap mt-3">
+    <div class="d-flex bg-light rounded flex-wrap">
       {% for _music_id, _title, _artist, _description, _url, _upload_at, _tags, _thumbnail_url in musics %}
       <div class="col p-3 m-3">
         <a href="/music/{{_music_id}}">
