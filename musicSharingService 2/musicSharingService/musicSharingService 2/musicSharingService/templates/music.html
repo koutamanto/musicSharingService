@@ -3,9 +3,11 @@
 音楽
 {% endblock %}
 {% block content%}
-<div class="m-5 row">
-  <div class="col p-3 bg-light rounded m-3" style="height: 100%;;">
-    {{embed_html | safe}}
+<div class="m-2 row">
+  <div class="col p-3 bg-light rounded m-3" style="height: 100%;">
+    <div class="video">
+      {{embed_html | safe}}
+    </div>
     <a href="{{url}}">
       <h4>{{title}}</h4>
     </a>
@@ -18,12 +20,15 @@
       {% endfor %}
     </div>
   </div>
-  <div class="col m-3">
-    <div class="d-flex bg-light rounded flex-wrap">
+  <div class="col m-2 mt-3">
+    <h2 class="text-center text-light">
+      関連音楽
+    </h2>
+    <div class="d-flex bg-light rounded flex-wrap mt-3">
       {% for _music_id, _title, _artist, _description, _url, _upload_at, _tags, _thumbnail_url in musics %}
       <div class="col p-3 m-3">
         <a href="/music/{{_music_id}}">
-          <img src="{{_thumbnail_url}}" alt="" width="350px">
+          <img src="{{_thumbnail_url}}" alt="" class="music-thumbnail">
           <h4 class="title">{{_title}}</h4>
         </a>
         <b>{{_artist}}</b>

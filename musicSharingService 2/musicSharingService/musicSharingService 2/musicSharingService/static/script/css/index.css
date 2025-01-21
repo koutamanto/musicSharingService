@@ -133,6 +133,14 @@ p.description {
     .content h3 {
         font-size: 20px;
     }
+    .video iframe {
+        width: 80vw;
+        height: 45vw;
+    }
+    img.music-thumbnail {
+        width: 80vw;
+        height: 45vw;
+    }
 }
 
 .content h1 {
